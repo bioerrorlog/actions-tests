@@ -25,11 +25,11 @@ jobs:
           ls -la
       - name: Check the main repo
         run: |
-          cd ${{ env.GITHUB_WORKSPACE }}/main
+          cd $GITHUB_WORKSPACE/main
           pwd
           ls -la
       - name: Check the another repo
         run: |
-          cd ${{ env.GITHUB_WORKSPACE }}/another
+          cd $GITHUB_WORKSPACE/another
           pwd
           ls -la
