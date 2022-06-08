@@ -33,3 +33,6 @@ jobs:
           cd ${GITHUB_WORKSPACE}/another
           pwd
           ls -la
+      - run: |
+          pwd
+          ls -la
