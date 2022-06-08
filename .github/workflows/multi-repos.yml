@@ -1,0 +1,25 @@
+name: Multiple repos clone tests
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  multi-repos:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          pwd
+          ls -la
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          path: main
+      - name: Checkout another repo
+        uses: actions/checkout@v3
+        with:
+          repository: bioerrorlog/blockchain_in_rust
+          path: another
+      - run: |
+          pwd
+          ls -la
