@@ -7,6 +7,9 @@ on:
 jobs:
   multi-repos:
     runs-on: ubuntu-latest
+    env:
+      MAIN_DIR: main
+      ANOTHER_DIR: another
     steps:
       - run: |
           pwd
@@ -14,22 +17,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          path: main
+          path: ${{ env.MAIN_DIR }}
       - name: Checkout another repo
         uses: actions/checkout@v3
         with:
           repository: bioerrorlog/blockchain_in_rust
-          path: another
+          path: ${{ env.ANOTHER_DIR }}
       - run: |
           pwd
           ls -la
       - name: Check the main repo
-        working-directory: main
+        working-directory: ${{ env.MAIN_DIR }}
         run: |
           pwd
           ls -la
       - name: Check the another repo
-        working-directory: another
+        working-directory: ${{ env.ANOTHER_DIR }}
         run: |
           pwd
           ls -la
