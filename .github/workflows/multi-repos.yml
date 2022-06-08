@@ -24,12 +24,12 @@ jobs:
           pwd
           ls -la
       - name: Check the main repo
-        working-directory: ${GITHUB_WORKSPACE}/main
+        working-directory: main
         run: |
           pwd
           ls -la
       - name: Check the another repo
-        working-directory: ${GITHUB_WORKSPACE}/another
+        working-directory: another
         run: |
           pwd
           ls -la
