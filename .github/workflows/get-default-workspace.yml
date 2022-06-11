@@ -1,0 +1,34 @@
+name: Get the default workspace tests
+
+on:
+  push:
+
+jobs:
+  multi-repos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: |
+        pwd
+        echo ${{ env.GITHUB_WORKSPACE }}
+      - run: |
+        cd .github
+        pwd
+        echo ${{ env.GITHUB_WORKSPACE }}
+
+      - run: |
+        pwd
+        echo ${GITHUB_WORKSPACE}
+      - run: |
+        cd .github
+        pwd
+        echo ${GITHUB_WORKSPACE}
+
+      - run: |
+        pwd
+        echo ${github.workspace}
+      - run: |
+        cd .github
+        pwd
+        echo ${github.workspace}
