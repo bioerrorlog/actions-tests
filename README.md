@@ -1,3 +1,3 @@
-# multiple-repos-actions
+# actions-tests
 
-For testing multiple repos cloning in GitHub Actions
+For experiments of GitHub Actions behavior
