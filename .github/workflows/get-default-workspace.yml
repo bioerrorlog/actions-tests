@@ -27,8 +27,8 @@ jobs:
 
       - run: |
           pwd
-          echo ${github.workspace}
+          echo ${{ github.workspace }}
       - run: |
           cd .github
           pwd
-          echo ${github.workspace}
+          echo ${{ github.workspace }}
