@@ -15,8 +15,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses:  aviate-labs/setup-dfx@v0.2.3
         with:
-          # dfx-version: ${{ env.DFX_VERSION }}
-          # install-moc: true
+          dfx-version: ${{ env.DFX_VERSION }}
+          install-moc: true
           vessel-version: ${{ env.VESSEL_VERSION }}
       - name: Show versions
         run: |
