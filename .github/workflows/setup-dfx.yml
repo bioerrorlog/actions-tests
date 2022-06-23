@@ -1,0 +1,28 @@
+name: Setup dfx
+
+on:
+  push:
+
+jobs:
+  setup-dfx:
+    runs-on: ubuntu-latest
+
+    env:
+      VESSEL_VERSION: 0.6.3
+      DFX_VERSION: 0.9.3
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses:  aviate-labs/setup-dfx@v0.2.3
+        with:
+          dfx-version: ${{ env.DFX_VERSION }}
+          install-moc: true
+          vessel-version: ${{ env.VESSEL_VERSION }}
+      - name: Show versions
+        run: |
+          dfx --version
+          which dfx
+          moc --version
+          which moc
+          vessel --version
+          which vessel
